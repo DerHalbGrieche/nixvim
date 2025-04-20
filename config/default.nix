@@ -11,4 +11,11 @@
 
   luaLoader.enable = true;
   plugins.lz-n.enable = true;
+  dependencies = {
+    fzf.enable = true;
+    ripgrep.enable = true;
+    tree-sitter.enable = true;
+    nodejs.enable = true;
+    gcc.enable = true;
+  };
 }
