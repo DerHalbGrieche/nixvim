@@ -1,6 +1,6 @@
 {self, ...}: {
   # Import all your configuration modules here
-  imports = [./bufferline.nix ./theme.nix ./languages ./nvim-tree.nix ./telescope.nix];
+  imports = [./bufferline.nix ./theme.nix ./languages ./nvim-tree.nix ./telescope.nix ./presence.nix ./which-key.nix];
   plugins = {
     lualine.enable = true;
     treesitter.enable = true;
