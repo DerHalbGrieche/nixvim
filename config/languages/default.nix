@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./nix.nix
+    ./rust.nix
   ];
   plugins = {
     #Formatter and Diagnostics
