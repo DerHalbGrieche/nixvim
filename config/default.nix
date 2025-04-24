@@ -13,5 +13,6 @@
     tree-sitter.enable = true;
     nodejs.enable = true;
     gcc.enable = true;
+    rust-analyzer.enable = true;
   };
 }
