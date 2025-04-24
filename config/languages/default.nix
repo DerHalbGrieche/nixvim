@@ -2,6 +2,7 @@
   imports = [
     ./nix.nix
     ./rust.nix
+    ./markdown.nix
   ];
   plugins = {
     #Formatter and Diagnostics
