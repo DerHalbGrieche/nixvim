@@ -4,7 +4,7 @@
 
     disableNetrw = false;
     hijackNetrw = true;
-    openOnSetup = true;
+    openOnSetup = false;
     autoClose = true;
     diagnostics.enable = true;
     view = {
