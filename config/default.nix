@@ -18,6 +18,7 @@
     lz-n.enable = true;
     nui.enable = true;
     nui.autoLoad = true;
+    nvim-autopairs.enable = true;
   };
   extraConfigLua =
     # lua
