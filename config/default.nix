@@ -6,7 +6,6 @@
   vimAlias = true;
 
   luaLoader.enable = true;
-  plugins.lz-n.enable = true;
   dependencies = {
     fzf.enable = true;
     ripgrep.enable = true;
@@ -14,6 +13,11 @@
     nodejs.enable = true;
     gcc.enable = true;
     rust-analyzer.enable = true;
+  };
+  plugins = {
+    lz-n.enable = true;
+    nui.enable = true;
+    nui.autoLoad = true;
   };
   extraConfigLua =
     # lua

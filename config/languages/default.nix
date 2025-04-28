@@ -3,6 +3,7 @@
     ./nix.nix
     ./rust.nix
     ./markdown.nix
+    ./cpp.nix
   ];
   plugins = {
     #Formatter and Diagnostics
