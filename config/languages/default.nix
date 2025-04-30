@@ -4,6 +4,7 @@
     ./rust.nix
     ./markdown.nix
     ./cpp.nix
+    ./python.nix
   ];
   plugins = {
     #Formatter and Diagnostics
