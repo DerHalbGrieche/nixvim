@@ -11,8 +11,6 @@
     };
     lsp.servers.tailwindcss = {
       enable = true;
-      autostart = true;
-      cmd = ["tailwindcss-language-server" "--stdio"];
     };
   };
 }

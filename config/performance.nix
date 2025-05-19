@@ -1,7 +1,7 @@
 {
   performance = {
     combinePlugins = {
-      enable = true;
+      enable = false;
       standalonePlugins = [
         "copilot.lua"
         "nvim-treesitter"
