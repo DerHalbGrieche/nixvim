@@ -5,6 +5,8 @@
     ./markdown.nix
     ./cpp.nix
     ./python.nix
+    ./css.nix
+    ./html.nix
   ];
   plugins = {
     #Formatter and Diagnostics
