@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   plugins = {
     none-ls.sources.formatting.prettier.enable = true;
     conform-nvim.settings.formatters_by_ft.css = {
@@ -12,6 +12,7 @@
     lsp.servers.tailwindcss = {
       enable = true;
       autostart = true;
+      cmd = ["tailwindcss-language-server" "--stdio"];
     };
   };
 }
