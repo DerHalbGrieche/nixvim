@@ -1,5 +1,6 @@
 {
   plugins = {
+    markdown-preview.enable = true;
     lsp.servers.marksman.enable = true;
     none-ls.sources.formatting.prettier.enable = true;
     conform-nvim.settings.formatters_by_ft.markdown = {
