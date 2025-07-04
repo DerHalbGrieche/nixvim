@@ -20,6 +20,10 @@
     nui.autoLoad = true;
     nvim-autopairs.enable = true;
   };
+  opts = {
+    number = true;
+    relativenumber = true;
+  };
   extraConfigLua =
     # lua
     ''
