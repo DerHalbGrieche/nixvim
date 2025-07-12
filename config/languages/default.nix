@@ -1,12 +1,12 @@
 {pkgs, ...}: {
   imports = [
-    ./nix.nix
-    ./rust.nix
-    ./markdown.nix
     ./cpp.nix
-    ./python.nix
     ./css.nix
     ./html.nix
+    ./markdown.nix
+    ./nix.nix
+    ./python.nix
+    ./rust.nix
   ];
   plugins = {
     #Formatter and Diagnostics
