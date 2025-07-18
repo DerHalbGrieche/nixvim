@@ -11,14 +11,17 @@
             add_current = "<leader>ac";
           };
         };
-        copilot = {
-          model = "claude-sonnet-4";
-          endpoint = "https://api.githubcopilot.com";
-          allow_insecure = false;
-          timeout = 10 * 60 * 1000;
-          temperature = 0;
-          max_completion_tokens = 1000000;
-          reasoning_effort = "high";
+        providers = {
+          copilot = {
+            model = "claude-sonnet-4";
+            endpoint = "https://api.githubcopilot.com";
+            allow_insecure = false;
+            timeout = 10 * 60 * 1000;
+            extra_request_body = {
+              temperature = 0;
+            };
+            reasoning_effort = "high";
+          };
         };
         diff = {
           autojump = true;
