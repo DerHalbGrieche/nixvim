@@ -1,4 +1,8 @@
-{self, ...}: {
+{
+  self,
+  pkgs,
+  ...
+}: {
   # Import all your configuration modules here
   imports = [./bufferline.nix ./theme.nix ./languages ./nvim-tree.nix ./telescope.nix ./presence.nix ./which-key.nix ./copilot.nix ./treesitter.nix ./lualine.nix ./ufo.nix ./dashboard.nix ./git.nix ./autosave.nix];
   globals.mapleader = " ";
@@ -24,10 +28,12 @@
     number = true;
     relativenumber = true;
   };
+  extraPlugins = with pkgs; [vimPlugins.leetcode-nvim];
   extraConfigLua =
     # lua
     ''
       vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
       vim.o.foldcolumn = "0"
+      require('leetcode').setup()
     '';
 }
