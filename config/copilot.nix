@@ -1,6 +1,16 @@
 {
   plugins = {
-    copilot-lua.enable = true;
+    copilot-lua = {
+      enable = true;
+      settings = {
+        suggestion.enabled = false;
+        panel.enabled = false;
+        filetypes = {
+          markdown = true;
+          help = true;
+        };
+      };
+    };
     avante = {
       enable = true;
 
@@ -16,7 +26,6 @@
             model = "claude-sonnet-4";
             endpoint = "https://api.githubcopilot.com";
             allow_insecure = false;
-            timeout = 10 * 60 * 1000;
             extra_request_body = {
               temperature = 0;
             };

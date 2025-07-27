@@ -132,11 +132,13 @@
           providers = {
             dictionary = {
               name = "Dict";
+              async = true;
               module = "blink-cmp-dictionary";
               min_keyword_length = 3;
             };
             emoji = {
               name = "Emoji";
+              async = true;
               module = "blink-emoji";
               score_offset = 1;
             };
@@ -144,16 +146,18 @@
               name = "copilot";
               module = "blink-copilot";
               async = true;
-              score_offset = 100;
+              score_offset = 3;
             };
-            lsp.score_offset = 4;
+            lsp.score_offset = 100;
             spell = {
               name = "Spell";
+              async = true;
               module = "blink-cmp-spell";
               score_offset = 1;
             };
             git = {
               name = "Git";
+              async = true;
               module = "blink-cmp-git";
               enabled = true;
               score_offset = 100;
