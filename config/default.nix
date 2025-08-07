@@ -4,7 +4,22 @@
   ...
 }: {
   # Import all your configuration modules here
-  imports = [./bufferline.nix ./theme.nix ./languages ./nvim-tree.nix ./telescope.nix ./presence.nix ./which-key.nix ./copilot.nix ./treesitter.nix ./lualine.nix ./ufo.nix ./dashboard.nix ./git.nix ./autosave.nix];
+  imports = [
+    ./bufferline.nix
+    #./theme.nix
+    ./languages
+    ./nvim-tree.nix
+    ./telescope.nix
+    ./presence.nix
+    ./which-key.nix
+    ./copilot.nix
+    ./treesitter.nix
+    ./lualine.nix
+    ./ufo.nix
+    ./dashboard.nix
+    ./git.nix
+    ./autosave.nix
+  ];
   globals.mapleader = " ";
   viAlias = true;
   vimAlias = true;
