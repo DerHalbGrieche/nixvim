@@ -21,47 +21,16 @@
             add_current = "<leader>ac";
           };
         };
+        provider = "copilot";
         providers = {
           copilot = {
-            model = "claude-sonnet-4";
+            model = "gpt-5";
             endpoint = "https://api.githubcopilot.com";
-            allow_insecure = false;
             extra_request_body = {
-              temperature = 0;
+              temperature = 0.75;
             };
             reasoning_effort = "high";
           };
-        };
-        diff = {
-          autojump = true;
-          debug = false;
-          list_opener = "copen";
-        };
-        highlights = {
-          diff = {
-            current = "DiffText";
-            incoming = "DiffAdd";
-          };
-        };
-        hints.enabled = true;
-        mappings = {
-          diff = {
-            both = "cb";
-            next = "]x";
-            none = "c0";
-            ours = "co";
-            prev = "[x";
-            theirs = "tc";
-          };
-        };
-        provider = "copilot";
-        windows = {
-          sidebar_header = {
-            align = "right";
-            rounded = false;
-          };
-          width = 30;
-          wrap = true;
         };
       };
     };
