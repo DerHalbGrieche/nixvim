@@ -10,7 +10,6 @@
     ./languages
     ./nvim-tree.nix
     ./telescope.nix
-    ./presence.nix
     ./which-key.nix
     ./copilot.nix
     ./treesitter.nix
