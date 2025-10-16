@@ -1,5 +1,5 @@
 {
-  lsp.rust_analyzer = {
+  lsp.servers.rust_analyzer = {
     enable = true;
   };
 }
