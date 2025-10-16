@@ -7,6 +7,7 @@
     ./nix.nix
     ./python.nix
     ./rust.nix
+    ./php.nix
   ];
   lsp = {
     inlayHints.enable = true;
