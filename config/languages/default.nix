@@ -8,6 +8,31 @@
     ./python.nix
     ./rust.nix
   ];
+  lsp = {
+    inlayHints.enable = true;
+    keymaps = [
+      {
+        key = "gd";
+        lspBufAction = "definition";
+      }
+      {
+        key = "gD";
+        lspBufAction = "references";
+      }
+      {
+        key = "gt";
+        lspBufAction = "type_definition";
+      }
+      {
+        key = "gi";
+        lspBufAction = "implementation";
+      }
+      {
+        key = "K";
+        lspBufAction = "hover";
+      }
+    ];
+  };
   plugins = {
     #Formatter and Diagnostics
     none-ls.enable = true;
@@ -29,69 +54,6 @@
     };
 
     # Generic LSP Server Setup
-    lsp = {
-      enable = true;
-      inlayHints = true;
-      keymaps = {
-        diagnostic = {
-          "<leader>E" = "open_float";
-          "[" = "goto_prev";
-          "]" = "goto_next";
-        };
-        lspBuf = {
-          "gD" = "declaration";
-          "gd" = "definition";
-          "gr" = "references";
-          "gI" = "implementation";
-          "gy" = "type_definition";
-          "<leader>h" = "hover";
-          "<leader>Cf" = "format";
-          "<leader>Ca" = "code_action";
-          "<leader>Cr" = "rename";
-          "<leader>CD" = "declaration";
-          "<leader>Cd" = "definition";
-          "<leader>CR" = "references";
-          "<leader>CI" = "implementation";
-          "<leader>Cy" = "type_definition";
-          "<leader>Wl" = "list_workspace_folders";
-          "<leader>Wr" = "remove_workspace_folder";
-          "<leader>Wa" = "add_workspace_folder";
-        };
-      };
-      preConfig =
-        # lua
-        ''
-          vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-            vim.lsp.handlers.hover,
-            {border = 'rounded'}
-          )
-
-          vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-            vim.lsp.handlers.signature_help,
-            {border = 'rounded'}
-          )
-        '';
-      postConfig =
-        # lua
-        ''
-          vim.diagnostic.config {
-            signs = {
-              text = {
-                [vim.diagnostic.severity.ERROR] = " ",
-                [vim.diagnostic.severity.WARN] = " ",
-                [vim.diagnostic.severity.INFO] = " ",
-                [vim.diagnostic.severity.HINT] = " ",
-              },
-              numhl = {
-                [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
-                [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
-                [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
-                [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
-              },
-            },
-          }
-        '';
-    };
     blink-cmp-dictionary.enable = true;
     blink-cmp-git.enable = true;
     blink-cmp-spell.enable = true;
