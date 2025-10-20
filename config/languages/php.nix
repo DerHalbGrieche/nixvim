@@ -3,7 +3,7 @@
     enable = true;
     activate = true;
     config = {
-      command = ["phpactor" "language-server"];
+      cmd = ["phpactor" "language-server"];
       filetypes = ["php"];
     };
   };
