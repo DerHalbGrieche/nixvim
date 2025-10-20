@@ -1,5 +1,5 @@
 {
-  lsp.servers.jdtleng = {
+  lsp.servers.jdtls = {
     enable = true;
     activate = true;
     config = {
