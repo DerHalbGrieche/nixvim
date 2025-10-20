@@ -37,17 +37,10 @@
     nui.enable = true;
     nui.autoLoad = true;
     nvim-autopairs.enable = true;
+    leetcode.enable = true;
   };
   opts = {
     number = true;
     relativenumber = true;
   };
-  extraPlugins = with pkgs; [vimPlugins.leetcode-nvim];
-  extraConfigLua =
-    # lua
-    ''
-      vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-      vim.o.foldcolumn = "0"
-      require('leetcode').setup()
-    '';
 }

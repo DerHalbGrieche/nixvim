@@ -9,8 +9,8 @@
     tailwind-tools = {
       enable = true;
     };
-    lsp.servers.tailwindcss = {
-      enable = true;
-    };
+  };
+  lsp.servers.tailwindcss = {
+    enable = true;
   };
 }
