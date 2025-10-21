@@ -1,15 +1,30 @@
 {pkgs, ...}: let
-  # Read all files in the current directory
-  files = builtins.readDir ./.;
-
-  # Filter out default.nix and non-.nix files
-  nixFiles = builtins.filter (name: name != "default.nix" && builtins.match ".*\\.nix" name != null) (builtins.attrNames files);
-
-  # Create a list of import statements
-  imports = map (name: ./. + "/${name}") nixFiles;
+  enabled_servers = [
+    "clangd"
+    "cssls"
+    "superhtml"
+    "jdtls"
+    "eslint"
+    "texlab"
+    "nil_ls"
+    "nixd"
+    "phpactor"
+    "rust_analyzer"
+    "taillwindcss"
+  ];
 in {
-  imports = imports;
+  imports = [
+    ./conform.nix
+  ];
   lsp = {
+    servers = builtins.listToAttrs (map (name: {
+        inherit name;
+        value = {
+          enable = true;
+          activate = true;
+        };
+      })
+      enabled_servers);
     inlayHints.enable = true;
     keymaps = [
       {
@@ -37,23 +52,13 @@ in {
   plugins = {
     #Formatter and Diagnostics
     lsp.enable = true;
-    none-ls.enable = true;
+    none-ls = {
+      enable = true;
+      sources.formatting.prettier.enable = true;
+    };
+    ts-autotag.enable = true;
 
     # Format on Save, ...
-    conform-nvim = {
-      enable = true;
-      package = pkgs.vimPlugins.conform-nvim;
-      settings = {
-        format_on_save = {
-          lspFallback = true;
-          timeoutMs = 500;
-        };
-        notify_on_error = true;
-      };
-      settings.formatters_by_ft = {
-        "_" = ["trim_whitespace"];
-      };
-    };
 
     # Generic LSP Server Setup
     blink-cmp-dictionary.enable = true;
