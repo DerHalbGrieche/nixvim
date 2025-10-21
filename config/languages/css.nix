@@ -6,9 +6,6 @@
       __unkeyed-2 = "prettier";
       stop_after_first = true;
     };
-    tailwind-tools = {
-      enable = true;
-    };
   };
   lsp.servers.tailwindcss = {
     enable = true;

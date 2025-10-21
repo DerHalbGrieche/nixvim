@@ -36,6 +36,7 @@ in {
   };
   plugins = {
     #Formatter and Diagnostics
+    lsp.enable = true;
     none-ls.enable = true;
 
     # Format on Save, ...
