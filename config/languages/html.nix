@@ -7,4 +7,8 @@
       stop_after_first = true;
     };
   };
+  lsp.servers.superhtml = {
+    enable = true;
+    activate = true;
+  };
 }
