@@ -54,7 +54,13 @@ in {
     lsp.enable = true;
     none-ls = {
       enable = true;
-      sources.formatting.prettier.enable = true;
+      sources = {
+        formatting.prettier.enable = true;
+        formatting.alejandra.enable = true;
+        diagnostics.statix.enable = true;
+        diagnostics.deadnix.enable = true;
+        code_actions.statix.enable = true;
+      };
     };
     ts-autotag.enable = true;
 

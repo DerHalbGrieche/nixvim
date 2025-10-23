@@ -23,6 +23,7 @@
     };
     settings.formatters_by_ft = {
       "_" = ["trim_whitespace"];
+      nix = ["alejandra"];
     };
   };
 }

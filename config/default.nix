@@ -38,6 +38,7 @@
     nui.autoLoad = true;
     nvim-autopairs.enable = true;
     leetcode.enable = true;
+    nix.enable = true;
   };
   opts = {
     number = true;
