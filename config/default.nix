@@ -33,12 +33,13 @@
     rust-analyzer.enable = true;
   };
   plugins = {
-    lz-n.enable = true;
-    nui.enable = true;
-    nui.autoLoad = true;
-    nvim-autopairs.enable = true;
+    cord.enable = true;
     leetcode.enable = true;
+    lz-n.enable = true;
     nix.enable = true;
+    nui.autoLoad = true;
+    nui.enable = true;
+    nvim-autopairs.enable = true;
   };
   opts = {
     number = true;
