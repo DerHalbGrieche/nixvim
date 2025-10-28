@@ -15,7 +15,7 @@
 
     treesitter-refactor = {
       enable = true;
-      highlightDefinitions = {
+      settings.highlight_definitions = {
         enable = true;
         clearOnCursorMove = false;
       };
