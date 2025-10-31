@@ -51,16 +51,8 @@ in {
   };
   plugins = {
     #Formatter and Diagnostics
-    lsp.enable = true;
-    none-ls = {
+    lsp = {
       enable = true;
-      sources = {
-        formatting.prettier.enable = true;
-        formatting.alejandra.enable = true;
-        diagnostics.statix.enable = true;
-        diagnostics.deadnix.enable = true;
-        code_actions.statix.enable = true;
-      };
     };
     ts-autotag.enable = true;
 
