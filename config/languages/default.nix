@@ -2,15 +2,16 @@
   enabled_servers = [
     "clangd"
     "cssls"
-    "superhtml"
-    "jdtls"
     "eslint"
-    "texlab"
+    "jdtls"
     "nil_ls"
     "nixd"
     "phpactor"
     "rust_analyzer"
+    "superhtml"
     "taillwindcss"
+    "texlab"
+    "yamlls"
   ];
 in {
   imports = [
