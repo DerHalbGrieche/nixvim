@@ -24,6 +24,7 @@
         formatters_by_ft = {
           "_" = ["trim_whitespace"];
           nix = ["alejandra"];
+          php = ["prettier_html"];
         };
         formatters = {
           php-cs-fixer = {
