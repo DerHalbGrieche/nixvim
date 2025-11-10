@@ -9,6 +9,7 @@
     "phpactor"
     "rust_analyzer"
     "superhtml"
+    "sqls"
     "taillwindcss"
     "texlab"
     "yamlls"
