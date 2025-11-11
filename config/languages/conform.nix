@@ -6,7 +6,6 @@
       enableLspFormat = true;
       sources = {
         formatting = {
-          alejandra.enable = true;
           phpcbf.enable = true;
           prettier.enable = true;
         };
