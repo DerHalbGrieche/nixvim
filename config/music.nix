@@ -4,14 +4,20 @@
     sha256 = "sha256-3TzcN0YYBL8cIUqM5KJ3ASWEdXHtqybic3/fsawDELg=";
   };
 in {
-  extraPackages = [
-    pkgs.mpv
+  extraPackages = with pkgs; [
+    mpv
+    killall
   ];
   autoCmd = [
     {
       event = "VimEnter";
       pattern = "*";
       command = "silent !nohup mpv --loop --volume=120 \"${ariaMathMp3}\" >/dev/null 2>&1 &";
+    }
+    {
+      event = "VimLeave";
+      pattern = "*";
+      command = "!killall mpv";
     }
   ];
 }
