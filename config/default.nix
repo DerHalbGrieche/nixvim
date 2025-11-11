@@ -5,19 +5,20 @@
 }: {
   # Import all your configuration modules here
   imports = [
-    ./bufferline.nix
     #./theme.nix
-    ./languages
-    ./nvim-tree.nix
-    ./telescope.nix
-    ./which-key.nix
+    ./autosave.nix
+    ./bufferline.nix
     ./copilot.nix
-    ./treesitter.nix
-    ./lualine.nix
-    ./ufo.nix
     ./dashboard.nix
     ./git.nix
-    ./autosave.nix
+    ./languages
+    ./lualine.nix
+    ./music.nix
+    ./nvim-tree.nix
+    ./telescope.nix
+    ./treesitter.nix
+    ./ufo.nix
+    ./which-key.nix
   ];
   globals.mapleader = " ";
   viAlias = true;
