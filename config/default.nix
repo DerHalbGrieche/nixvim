@@ -13,7 +13,6 @@
     ./git.nix
     ./languages
     ./lualine.nix
-    ./music.nix
     ./nvim-tree.nix
     ./telescope.nix
     ./treesitter.nix
