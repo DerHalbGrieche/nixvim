@@ -17,6 +17,7 @@
 in {
   imports = [
     ./conform.nix
+    ./markdown.nix
   ];
   lsp = {
     servers = builtins.listToAttrs (
