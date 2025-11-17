@@ -14,6 +14,7 @@
     ./languages
     ./lualine.nix
     ./nvim-tree.nix
+    ./noice.nix
     ./telescope.nix
     ./treesitter.nix
     ./ufo.nix
@@ -40,6 +41,7 @@
     nui.autoLoad = true;
     nui.enable = true;
     nvim-autopairs.enable = true;
+    snacks.enable = true;
   };
   opts = {
     number = true;

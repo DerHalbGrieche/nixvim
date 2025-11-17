@@ -19,14 +19,16 @@ in {
     ./conform.nix
   ];
   lsp = {
-    servers = builtins.listToAttrs (map (name: {
+    servers = builtins.listToAttrs (
+      map (name: {
         inherit name;
         value = {
           enable = true;
           activate = true;
         };
       })
-      enabled_servers);
+      enabled_servers
+    );
     inlayHints.enable = true;
     keymaps = [
       {
@@ -73,15 +75,41 @@ in {
       settings = {
         keymap = {
           preset = "none";
-          "<Tab>" = ["snippet_forward" "select_next" "fallback"];
-          "<C-Tab>" = ["snippet_backward" "select_next" "fallback"];
-          "<C-s>" = ["show_signature" "fallback"];
+          "<Tab>" = [
+            "snippet_forward"
+            "select_next"
+            "fallback"
+          ];
+          "<C-Tab>" = [
+            "snippet_backward"
+            "select_next"
+            "fallback"
+          ];
+          "<C-s>" = [
+            "show_signature"
+            "fallback"
+          ];
           "<C-e>" = ["cancel"];
-          "<C-Space>" = ["show_documentation" "fallback"];
-          "<Up>" = ["scroll_documentation_up" "fallback"];
-          "<Down>" = ["scroll_documentation_down" "fallback"];
-          "<CR>" = ["accept" "fallback"];
-          "<C-x>" = ["show" "hide"];
+          "<C-Space>" = [
+            "show_documentation"
+            "fallback"
+          ];
+          "<Up>" = [
+            "scroll_documentation_up"
+            "fallback"
+          ];
+          "<Down>" = [
+            "scroll_documentation_down"
+            "fallback"
+          ];
+          "<CR>" = [
+            "accept"
+            "fallback"
+          ];
+          "<C-x>" = [
+            "show"
+            "hide"
+          ];
         };
 
         signature.enabled = true;
