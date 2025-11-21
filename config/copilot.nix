@@ -24,7 +24,7 @@
         provider = "copilot";
         providers = {
           copilot = {
-            model = "gpt-5";
+            model = "claude-sonnet-4.5";
             endpoint = "https://api.githubcopilot.com";
             extra_request_body = {
               temperature = 0.75;
