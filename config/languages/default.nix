@@ -54,8 +54,17 @@ in {
       }
     ];
   };
-  extraPackages = with pkgs; [
-    lldb
+  keymaps = [
+    # Toggle Dap-UI
+    {
+      key = "gru";
+      mode = "n";
+      action.__raw = "function() require('dapui').toggle() end";
+      options = {
+        desc = "Toggle Debug UI";
+        silent = true;
+      };
+    }
   ];
   plugins = {
     #Formatter and Diagnostics
