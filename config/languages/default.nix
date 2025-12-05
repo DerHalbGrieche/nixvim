@@ -54,12 +54,22 @@ in {
       }
     ];
   };
+  extraPackages = with pkgs; [
+    lldb
+  ];
   plugins = {
     #Formatter and Diagnostics
     lsp = {
       enable = true;
     };
     ts-autotag.enable = true;
+
+    dap.enable = true;
+    dap-ui.enable = true;
+    dap-lldb = {
+      enable = true;
+      settings.codelldb_path = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb";
+    };
 
     # Format on Save, ...
 
