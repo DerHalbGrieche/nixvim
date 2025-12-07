@@ -12,6 +12,7 @@
     "sqls"
     "taillwindcss"
     "texlab"
+    "vtsls"
     "yamlls"
   ];
 in {
