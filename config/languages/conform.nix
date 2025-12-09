@@ -24,6 +24,7 @@
         formatters_by_ft = {
           "_" = ["trim_whitespace"];
           nix = ["alejandra"];
+          json = ["jq"];
         };
         format_on_save = {
           lspFallback = true;
@@ -38,5 +39,6 @@
     prettierd
     alejandra
     php84Packages.php-cs-fixer
+    jq
   ];
 }

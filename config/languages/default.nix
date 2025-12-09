@@ -14,6 +14,7 @@
     "texlab"
     "vtsls"
     "yamlls"
+    "jsonls"
   ];
 in {
   imports = [
