@@ -25,6 +25,7 @@
           "_" = ["trim_whitespace"];
           nix = ["alejandra"];
           json = ["jq"];
+          java = ["google-java-format"];
         };
         format_on_save = {
           lspFallback = true;
@@ -40,5 +41,6 @@
     alejandra
     php84Packages.php-cs-fixer
     jq
+    google-java-format
   ];
 }
