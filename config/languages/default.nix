@@ -4,6 +4,7 @@
     "cssls"
     "eslint"
     "jdtls"
+    "lemminx"
     "nil_ls"
     "nixd"
     "phpactor"
