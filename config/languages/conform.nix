@@ -13,6 +13,7 @@
           statix.enable = true;
           deadnix.enable = true;
           phpstan.enable = true;
+          phpstan.package = pkgs.phpstan;
           phpcs.enable = true;
         };
         code_actions.statix.enable = true;

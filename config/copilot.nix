@@ -1,50 +1,62 @@
 {
   plugins = {
-    copilot-lua = {
+    codecompanion = {
       enable = true;
       settings = {
-        suggestion.enabled = false;
-        panel.enabled = false;
-        filetypes = {
-          markdown = true;
-          help = true;
+        interactions.chat = {
+          adapter = "gemini_cli";
+          model = "gemini-3-pro";
         };
-      };
-    };
-    avante = {
-      enable = true;
+        adapters.acp = {
+          gemini_cli = {
+            __raw = ''
+                      function()
+                return require("codecompanion.adapters").extend("gemini_cli", {
+                  defaults = {
+                    auth_method = "oauth-personal", -- "oauth-personal"|"gemini-api-key"|"vertex-ai"
+                  },
+                })
+              end,
 
-      lazyLoad.settings.event = ["BufEnter"];
-      settings = {
-        mappings = {
-          files = {
-            add_current = "<leader>ac";
+            '';
           };
         };
-        provider = "copilot";
-        providers = {
-          copilot = {
-            model = "claude-sonnet-4.5";
-            endpoint = "https://api.githubcopilot.com";
-            extra_request_body = {
-              temperature = 0.75;
-            };
-            reasoning_effort = "high";
-          };
-        };
-      };
-    };
-
-    render-markdown = {
-      enable = true;
-      lazyLoad.settings = {
-        ft = ["Avante"];
-      };
-      settings = {
-        file_types = [
-          "Avante"
-        ];
       };
     };
   };
+  keymaps = [
+    {
+      mode = [
+        "n"
+        "v"
+      ];
+      key = "<leader>cc";
+      action = "<cmd>CodeCompanionChat Toggle<cr>";
+      options = {
+        desc = "Toggle CodeCompanion Chat";
+      };
+    }
+    {
+      mode = [
+        "n"
+        "v"
+      ];
+      key = "<leader>ca";
+      action = "<cmd>CodeCompanionActions<cr>";
+      options = {
+        desc = "CodeCompanion Actions";
+      };
+    }
+    {
+      mode = [
+        "n"
+        "v"
+      ];
+      key = "<leader>ci";
+      action = "<cmd>CodeCompanion<cr>";
+      options = {
+        desc = "CodeCompanion Inline";
+      };
+    }
+  ];
 }
