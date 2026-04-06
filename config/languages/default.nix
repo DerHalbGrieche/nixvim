@@ -4,18 +4,19 @@
     "cssls"
     "eslint"
     "jdtls"
+    "jsonls"
     "lemminx"
     "nil_ls"
     "nixd"
     "phpactor"
+    "pyright"
     "rust_analyzer"
-    "superhtml"
     "sqls"
+    "superhtml"
     "taillwindcss"
     "texlab"
     "vtsls"
     "yamlls"
-    "jsonls"
   ];
 in {
   imports = [
