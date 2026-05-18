@@ -20,10 +20,14 @@
         "aarch64-darwin"
       ];
       perSystem = {system, ...}: let
+        pkgs = import inputs.nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
         nixvimLib = nixvim.lib.${system};
         nixvim' = nixvim.legacyPackages.${system};
         nixvimModule = {
-          inherit system; # or alternatively, set `pkgs`
+          inherit pkgs;
           module = import ./config; # import the module directly
           # You can use `extraSpecialArgs` to pass additional arguments to your module files
           extraSpecialArgs = {
@@ -34,7 +38,15 @@
       in {
         checks = {
           # Run `nix flake check .` to verify that your config is not broken
-          default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
+          default = nixvimLib.check.mkTestDerivationFromNixvimModule (
+            nixvimModule
+            // {
+              module = {
+                imports = [./config];
+                plugins.telescope.extensions.project.enable = inputs.nixpkgs.lib.mkForce false;
+              };
+            }
+          );
         };
 
         packages = {
