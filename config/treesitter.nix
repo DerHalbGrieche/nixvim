@@ -8,11 +8,9 @@
       settings = {
         indent.enable = true;
         highlight.enable = true;
-        ensure_installed = "all";
-        auto_install = true;
       };
     };
 
-    hmts.enable = true;
+    hmts.enable = false;
   };
 }

@@ -25,14 +25,13 @@
   vimAlias = true;
 
   luaLoader.enable = true;
-  dependencies = {
-    fzf.enable = true;
-    ripgrep.enable = true;
-    tree-sitter.enable = true;
-    nodejs.enable = true;
-    gcc.enable = true;
-    rust-analyzer.enable = true;
-  };
+  extraPackages = with pkgs; [
+    fzf
+    ripgrep
+    nodejs
+    gcc
+    rust-analyzer
+  ];
   plugins = {
     cord.enable = true;
     leetcode.enable = true;

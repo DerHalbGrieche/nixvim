@@ -13,7 +13,7 @@
     "rust_analyzer"
     "sqls"
     "superhtml"
-    "taillwindcss"
+    "tailwindcss"
     "texlab"
     "vtsls"
     "yamlls"
@@ -237,6 +237,10 @@ in {
         };
 
         completion = {
+          list.selection = {
+            preselect = false;
+            auto_insert = false;
+          };
           menu = {
             border = "single";
             draw = {
