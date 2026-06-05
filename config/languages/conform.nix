@@ -26,7 +26,7 @@
           "_" = ["trim_whitespace"];
           nix = ["alejandra"];
           json = ["jq"];
-          java = ["google-java-format"];
+          java = ["lsp_format"];
           xml = ["lsp_format"];
         };
         format_on_save = {

@@ -3,7 +3,6 @@
     "clangd"
     "cssls"
     "eslint"
-    "jdtls"
     "jsonls"
     "lemminx"
     "nil_ls"
@@ -24,16 +23,31 @@ in {
     ./markdown.nix
   ];
   lsp = {
-    servers = builtins.listToAttrs (
-      map (name: {
-        inherit name;
-        value = {
+    servers =
+      builtins.listToAttrs (
+        map (name: {
+          inherit name;
+          value = {
+            enable = true;
+            activate = true;
+          };
+        })
+        enabled_servers
+      )
+      // {
+        jdtls = {
           enable = true;
           activate = true;
+          settings = {
+            java = {
+              completion = {
+                guessMethodArguments = false;
+              };
+            };
+          };
         };
-      })
-      enabled_servers
-    );
+        inlayHints.enable = true;
+      };
     inlayHints.enable = true;
     keymaps = [
       {
