@@ -23,6 +23,12 @@ in {
     ./markdown.nix
   ];
   lsp = {
+    onAttach = ''
+      if client.name == "jdtls" then
+        client.server_capabilities.documentFormattingProvider = false;
+        client.server_capabilities.documentRangeFormattingProvider = false;
+      end
+    '';
     servers =
       builtins.listToAttrs (
         map (name: {
@@ -42,6 +48,12 @@ in {
             java = {
               completion = {
                 guessMethodArguments = false;
+              };
+              format = {
+                settings = {
+                  url = "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml";
+                  profile = "GoogleStyle";
+                };
               };
             };
           };

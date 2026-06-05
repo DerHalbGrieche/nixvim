@@ -26,8 +26,8 @@
           "_" = ["trim_whitespace"];
           nix = ["alejandra"];
           json = ["jq"];
-          java = ["lsp_format"];
-          xml = ["lsp_format"];
+          java = [];
+          xml = [];
         };
         format_on_save = {
           lspFallback = true;
