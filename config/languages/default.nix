@@ -1,5 +1,6 @@
 {pkgs, ...}: let
   enabled_servers = [
+    "asm_lsp"
     "clangd"
     "cssls"
     "eslint"
