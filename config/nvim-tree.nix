@@ -8,6 +8,16 @@
       diagnostics = {
         enable = true;
       };
+      filesystem_watchers = {
+        enable = true;
+        debounce_delay = 50;
+        ignore_dirs = [
+          "/.git"
+          "/node_modules"
+          "/.direnv"
+          "/.cache"
+        ];
+      };
 
       view = {
         width = 40;
