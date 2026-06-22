@@ -8,7 +8,7 @@
     #./theme.nix
     ./autosave.nix
     ./bufferline.nix
-    ./copilot.nix
+    # ./copilot.nix
     ./dashboard.nix
     ./git.nix
     ./languages

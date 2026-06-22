@@ -3,7 +3,7 @@
     combinePlugins = {
       enable = true;
       standalonePlugins = [
-        "copilot.lua"
+        # "copilot.lua"
         "nvim-treesitter"
         "hmts.nvim"
         "nvim-tree.lua"
