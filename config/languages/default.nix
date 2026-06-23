@@ -9,7 +9,7 @@
     "nil_ls"
     "nixd"
     "phpactor"
-    "pyright"
+    "pylsp"
     "rust_analyzer"
     "sqls"
     "superhtml"
