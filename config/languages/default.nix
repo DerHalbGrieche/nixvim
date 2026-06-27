@@ -4,6 +4,7 @@
     "clangd"
     "cssls"
     "eslint"
+    "gopls"
     "jsonls"
     "lemminx"
     "nil_ls"
